@@ -1,6 +1,7 @@
 # meta file for ant
 ---
 galaxy_info:
+  role_name: ant
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
   description: Set up Apache Ant
