@@ -1,0 +1,7 @@
+# test file for ant
+---
+- hosts: localhost
+  connection: local
+  become: true
+  roles:
+    - ../../

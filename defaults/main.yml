@@ -1,0 +1,4 @@
+# defaults file for ant
+---
+ant_version: 1.10.5
+ant_install_prefix: /opt

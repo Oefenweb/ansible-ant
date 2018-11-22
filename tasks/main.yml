@@ -1,0 +1,36 @@
+# tasks file for ant
+---
+- name: create (download) directory
+  file:
+    path: "{{ ant_downloads_path }}"
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+  tags:
+    - configuration
+    - ant
+    - ant-download
+
+- name: download
+  get_url:
+    url: "http://apache.cs.uu.nl/ant/binaries/apache-ant-{{ ant_version }}-bin.tar.gz"
+    dest: "{{ ant_downloads_path }}/apache-ant-{{ ant_version }}-bin.tar.gz"
+    owner: root
+    group: root
+    mode: 0644
+  tags:
+    - configuration
+    - ant
+    - ant-downloads
+
+- name: install
+  unarchive:
+    src: "{{ ant_downloads_path }}/apache-ant-{{ ant_version }}-bin.tar.gz"
+    dest: "{{ ant_install_prefix }}"
+    creates: "{{ ant_install_prefix }}/apache-ant-{{ ant_version }}"
+    copy: false
+  tags:
+    - configuration
+    - ant
+    - ant-install
