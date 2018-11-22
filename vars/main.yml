@@ -1,0 +1,3 @@
+# vars file for ant
+---
+ant_downloads_path: /var/lib/ansible/ant/downloads
