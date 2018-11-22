@@ -1,5 +1,5 @@
 # post test file for ant
 ---
-- name: Run tests
-  command: "/opt/apache-ant-{{ ant_version }}/bin/ant --version"
+- name: run tests
+  command: /opt/apache-ant-{{ ant_version }}/bin/ant -version
   changed_when: false
