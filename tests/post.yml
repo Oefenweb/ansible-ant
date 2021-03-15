@@ -1,4 +1,4 @@
-# post test file for ant
+# post test file
 ---
 - name: post | run tests
   command: >
