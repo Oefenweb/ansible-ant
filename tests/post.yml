@@ -1,6 +1,0 @@
-# post test file
----
-- name: post | run tests
-  command: >
-    {{ ant_install_prefix }}/apache-ant-{{ ant_version }}/bin/ant -version
-  changed_when: false
