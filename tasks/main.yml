@@ -34,3 +34,13 @@
     - configuration
     - ant
     - ant-install
+
+- name: verify
+  command: >
+    {{ ant_install_prefix }}/apache-ant-{{ ant_version }}/bin/ant -version
+  changed_when: false
+  tags:
+    - configuration
+    - ant
+    - ant-install
+    - ant-install-verify

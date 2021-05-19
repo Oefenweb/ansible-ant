@@ -1,0 +1,19 @@
+# pre test file
+---
+# See: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=863199
+- name: ensure man directory
+  file:
+    path: /usr/share/man/man1
+    state: directory
+    recurse: true
+  when:
+    - ansible_distribution == 'Ubuntu'
+    - ansible_distribution_major_version is version('18', '>=')
+
+- name: install dependencies
+  apt:
+    name:
+      - default-jre
+    state: "{{ apt_install_state | default('latest') }}"
+    update_cache: true
+    cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
