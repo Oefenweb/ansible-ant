@@ -11,7 +11,7 @@ None
 
 #### Variables
 
-* `ant_version` [default: `1.10.10`]: Version to install
+* `ant_version` [default: `1.10.12`]: Version to install
 * `ant_install_prefix` [default: `/opt`]: Install prefix
 
 ## Dependencies
