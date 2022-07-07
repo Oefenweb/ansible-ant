@@ -1,7 +1,7 @@
 # tasks file
 ---
 - name: create (download) directory
-  file:
+  ansible.builtin.file:
     path: "{{ ant_downloads_path }}"
     state: directory
     owner: root
@@ -13,7 +13,7 @@
     - ant-download
 
 - name: download
-  get_url:
+  ansible.builtin.get_url:
     url: "http://apache.cs.uu.nl/ant/binaries/apache-ant-{{ ant_version }}-bin.tar.gz"
     dest: "{{ ant_downloads_path }}/apache-ant-{{ ant_version }}-bin.tar.gz"
     owner: root
@@ -25,7 +25,7 @@
     - ant-downloads
 
 - name: install
-  unarchive:
+  ansible.builtin.unarchive:
     src: "{{ ant_downloads_path }}/apache-ant-{{ ant_version }}-bin.tar.gz"
     dest: "{{ ant_install_prefix }}"
     creates: "{{ ant_install_prefix }}/apache-ant-{{ ant_version }}"
@@ -36,7 +36,7 @@
     - ant-install
 
 - name: verify
-  command: >
+  ansible.builtin.command: >
     {{ ant_install_prefix }}/apache-ant-{{ ant_version }}/bin/ant -version
   changed_when: false
   tags:
