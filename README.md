@@ -24,7 +24,7 @@ None
 ---
 - hosts: all
   roles:
-    - ant
+    - oefenweb.ant
 ```
 
 #### License
