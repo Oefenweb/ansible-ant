@@ -14,7 +14,7 @@
 
 - name: download
   ansible.builtin.get_url:
-    url: "http://apache.cs.uu.nl/ant/binaries/apache-ant-{{ ant_version }}-bin.tar.gz"
+    url: "https://dlcdn.apache.org/ant/binaries/apache-ant-{{ ant_version }}-bin.tar.gz"
     dest: "{{ ant_downloads_path }}/apache-ant-{{ ant_version }}-bin.tar.gz"
     owner: root
     group: root
