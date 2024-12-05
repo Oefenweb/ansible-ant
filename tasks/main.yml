@@ -6,7 +6,7 @@
     state: directory
     owner: root
     group: root
-    mode: 0755
+    mode: '0755'
   tags:
     - configuration
     - ant
@@ -18,7 +18,7 @@
     dest: "{{ ant_downloads_path }}/apache-ant-{{ ant_version }}-bin.tar.gz"
     owner: root
     group: root
-    mode: 0644
+    mode: '0644'
   tags:
     - configuration
     - ant
